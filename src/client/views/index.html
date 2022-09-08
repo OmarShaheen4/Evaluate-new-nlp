@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="">
+            Logo
+        </div>
+        <div class="">
+            navigation
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <form class="" onsubmit="return MyClient.handleSubmit(event)">
+                <input id="myUrl" type="text" name="input" value="" placeholder="Please Enter The Article Url">
+                <input id="btnSubmit" type="submit" name="bottom" value="submit">
+            </form>
+        </section>
+
+        <section>
+            <strong>Form Results:</strong>
+            <div id="text"></div>
+            <div id="results"></div>
+            <div id="model"></div>
+            <div id="score_tag"></div>
+            <div id="agreement"></div>
+            <div id="subjectivity"></div>
+            <div id="confidence"></div>
+            <div id="irony"></div>
+
+        </section>
+    </main>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker
+                    .register("/service-worker.js")
+                    .then((registration) => {
+                        console.log("SW registered: ", registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log("SW registration failed: ", registrationError);
+                    });
+            });
+        }
+
+    </script>
+    <footer>
+        <p>This is a footer</p>
+    </footer>
+
+</body>
+
+</html>
